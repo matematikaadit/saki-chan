@@ -1,0 +1,63 @@
+diff --git a/src/Hint/Base.hs b/src/Hint/Base.hs
+index 52d310c..66359fa 100644
+--- a/src/Hint/Base.hs
++++ b/src/Hint/Base.hs
+@@ -209,9 +209,11 @@ mayFail action =
+         case (maybe_res, null es) of
+             (Nothing,True)  -> throwM $ UnknownError "Got no error message"
+             (Nothing,False) -> throwM $ WontCompile (reverse es)
+-            (Just a, True)  -> return a
++            (Just a, _)     -> return a
++{-
+             (Just _, False) -> fail $ "GHC returned a result but said: " ++
+                                       show es
++-}
+ 
+ -- ================= Debugging stuff ===============
+ 
+diff --git a/src/Hint/Extension.hs b/src/Hint/Extension.hs
+index 2f0a401..ffff328 100644
+--- a/src/Hint/Extension.hs
++++ b/src/Hint/Extension.hs
+@@ -1,7 +1,8 @@
+ -- this module was automatically generated. do not edit!
+ -- edit util/mk_extensions_mod.hs instead
+ module Hint.Extension (Extension(..),
+-                       knownExtensions, availableExtensions, asExtension)
++                       knownExtensions, availableExtensions, asExtension,
++                       asExtension')
+ 
+ where
+ 
+@@ -12,11 +13,14 @@ availableExtensions :: [Extension]
+ availableExtensions = map asExtension Compat.supportedExtensions
+ 
+ asExtension :: String -> Extension
+-asExtension s = if isKnown s
+-                  then read s
++asExtension s = fst (asExtension' s False)
++
++asExtension' :: String -> Bool -> (Extension, Bool)
++asExtension' s f = if isKnown s
++                  then (read s, f)
+                   else let no_s = "No" ++ s
+-                  in if isKnown no_s then read no_s
+-                                     else UnknownExtension s
++                  in if isKnown no_s then (read no_s, not f)
++                                     else (UnknownExtension s, f)
+   where isKnown e = e `elem` map show knownExtensions
+ 
+ -- | This represents language extensions beyond Haskell 98
+diff --git a/src/Hint/InterpreterT.hs b/src/Hint/InterpreterT.hs
+index 5501698..0244ce6 100644
+--- a/src/Hint/InterpreterT.hs
++++ b/src/Hint/InterpreterT.hs
+@@ -130,7 +130,7 @@ initialize args =
+ #endif
+        let toOpt e     = let err = error ("init error: unknown ext:" ++ show e)
+                          in fromMaybe err (lookup e extMap)
+-       let getOptVal e = (asExtension e, GHC.xopt (toOpt e) df2)
++       let getOptVal e = asExtension' e (GHC.xopt (toOpt e) df2)
+        let defExts = map  getOptVal Compat.supportedExtensions
+ #else
+        let defExts = zip availableExtensions (repeat False)

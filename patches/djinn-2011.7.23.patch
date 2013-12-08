@@ -1,0 +1,11 @@
+diff -ru djinn-2011.7.23/djinn.cabal djinn-2011.7.23.my/djinn.cabal
+--- djinn-2011.7.23/djinn.cabal	2013-12-08 22:49:22.385283303 +0100
++++ djinn-2011.7.23.my/djinn.cabal	2013-11-17 01:41:29.035209406 +0100
+@@ -17,6 +17,6 @@
+ Hs-Source-Dirs: src
+ Other-modules:  Help, HCheck,  LJT, HTypes, LJTFormula, REPL
+ 
+-ghc-options:         -O2 -Wall -optl-Wl
++ghc-options:         -O2 -Wall
+ --ghc-options:         -Wall -optl-Wl
+ ghc-prof-options:    -prof -auto-all

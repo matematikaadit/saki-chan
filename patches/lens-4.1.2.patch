@@ -1,0 +1,70 @@
+diff --git a/src/Control/Lens/Action.hs b/src/Control/Lens/Action.hs
+index b0b3f7f..efebb4c 100644
+--- a/src/Control/Lens/Action.hs
++++ b/src/Control/Lens/Action.hs
+@@ -1,6 +1,10 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE Rank2Types #-}
+ {-# LANGUAGE FlexibleContexts #-}
+ {-# LANGUAGE MultiParamTypeClasses #-}
++#ifdef TRUSTWORTHY
++{-# LANGUAGE Trustworthy #-}
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Control.Lens.Action
+diff --git a/src/Control/Lens/Each.hs b/src/Control/Lens/Each.hs
+index 9c47b6b..b67ba5d 100644
+--- a/src/Control/Lens/Each.hs
++++ b/src/Control/Lens/Each.hs
+@@ -7,6 +7,9 @@
+ {-# LANGUAGE MultiParamTypeClasses #-}
+ {-# LANGUAGE UndecidableInstances #-}
+ {-# LANGUAGE FunctionalDependencies #-}
++#ifdef TRUSTWORTHY
++{-# LANGUAGE Trustworthy #-}
++#endif
+ 
+ #ifndef MIN_VERSION_base
+ #define MIN_VERSION_base(x,y,z) 1
+diff --git a/src/Control/Lens/Empty.hs b/src/Control/Lens/Empty.hs
+index f8f80a4..0f5f949 100644
+--- a/src/Control/Lens/Empty.hs
++++ b/src/Control/Lens/Empty.hs
+@@ -1,6 +1,9 @@
+ {-# LANGUAGE CPP #-}
+ {-# LANGUAGE MagicHash #-}
+ {-# LANGUAGE DefaultSignatures #-}
++#ifdef TRUSTWORTHY
++{-# LANGUAGE Trustworthy #-}
++#endif
+ 
+ -------------------------------------------------------------------------------
+ -- |
+diff --git a/src/Control/Lens/Level.hs b/src/Control/Lens/Level.hs
+index 2b3a991..99dcd6d 100644
+--- a/src/Control/Lens/Level.hs
++++ b/src/Control/Lens/Level.hs
+@@ -1,5 +1,9 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE Rank2Types #-}
+ {-# LANGUAGE FlexibleContexts #-}
++#ifdef TRUSTWORTHY
++{-# LANGUAGE Trustworthy #-}
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Control.Lens.Level
+diff --git a/src/Data/ByteString/Lens.hs b/src/Data/ByteString/Lens.hs
+index 8d97bce..00f54df 100644
+--- a/src/Data/ByteString/Lens.hs
++++ b/src/Data/ByteString/Lens.hs
+@@ -1,4 +1,8 @@
++{-# LANGUAGE CPP #-}
+ {-# LANGUAGE FlexibleContexts #-}
++#ifdef TRUSTWORTHY
++{-# LANGUAGE Trustworthy #-}
++#endif
+ -----------------------------------------------------------------------------
+ -- |
+ -- Module      :  Data.ByteString.Lens
