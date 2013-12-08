@@ -15,7 +15,7 @@ import Data.List
 type OutputFilter m = Nick -> [String] -> m [String]
 
 textwidth :: Int
-textwidth = 200 -- IRC maximum msg length, minus a bit for safety.
+textwidth = 350 -- IRC maximum msg length, minus a bit for safety.
 
 -- | For now, this just checks for duplicate empty lines.
 cleanOutput :: Monad m => OutputFilter m
