@@ -30,8 +30,7 @@ extra-source-files:     src/Modules.hs
                         scripts/vim/runwith
                         scripts/vim/typeOf
 
-data-files:             scripts/online.rc,
-                        State/haddock,
+data-files:             State/haddock,
                         State/L.hs,
                         State/Pristine.hs,
                         State/source,

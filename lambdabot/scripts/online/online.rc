@@ -1,0 +1,4 @@
+irc-connect freenode chat.freenode.net 6667 lambdabot Lambda_Robots:_100%_Loyal
+rc passwd.rc
+rc admins.rc
+rc channels.rc

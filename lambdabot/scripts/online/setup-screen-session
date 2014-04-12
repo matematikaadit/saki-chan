@@ -1,0 +1,9 @@
+#! /bin/bash
+screen -q -ls lambda
+[ $? == 9 ] || exit
+screen -S lambda -d -m
+screen -S lambda -X stuff 'cd ~/online\n./loop\n'
+screen -S lambda -X screen
+screen -S lambda -X stuff 'top -d 30 -u lambda\n'
+sleep 0.3
+screen -S lambda -X stuff 'M'
