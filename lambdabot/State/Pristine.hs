@@ -28,13 +28,16 @@
 {-# LANGUAGE TypeSynonymInstances #-}
 {-# LANGUAGE UnboxedTuples #-}
 {-# LANGUAGE UnicodeSyntax #-}
+{-# LANGUAGE CPP #-}
 module L where
 import Control.Applicative
 import Control.Arrow
 import Control.Monad
 import Control.Monad.Cont
 import Control.Monad.Identity
+#if __GLASGOW_HASKELL__ < 708
 import Control.Monad.Instances
+#endif
 import Control.Monad.Reader
 import Control.Monad.ST.Safe
 import Control.Monad.State
