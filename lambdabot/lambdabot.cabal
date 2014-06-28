@@ -53,4 +53,5 @@ executable lambdabot
                         lambdabot-misc-plugins,
                         lambdabot-novelty-plugins,
                         lambdabot-reference-plugins,
-                        lambdabot-social-plugins
+                        lambdabot-social-plugins,
+                        lambdabot-trusted
