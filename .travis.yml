@@ -2,10 +2,13 @@ language: haskell
 ghc:
   - 7.8
   - 7.6
-script: .travis/build
 install: .travis/install-deps
+script: .travis/build
 branches:
   only:
     - master
+matrix:
+  allow_failures:
+    - ghc: 7.8
 notifications:
   irc: "chat.freenode.net#haskell-id"
