@@ -7,3 +7,5 @@ install: .travis/install-deps
 branches:
   only:
     - master
+notifications:
+  irc: "chat.freenode.net#haskell-id"
