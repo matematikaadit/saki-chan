@@ -3,7 +3,7 @@
 set -e
 
 for dir in lambdabot-core lambdabot-trusted lambdabot-*-plugins lambdabot; do
-    (cd "$dir" && cabal install)
+    (cd "$dir" && cabal install --constraint="network==2.4.2.3")
 done
 
 echo "Thank you, come again!"
