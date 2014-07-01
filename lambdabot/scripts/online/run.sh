@@ -1,7 +1,7 @@
 #!/bin/sh
 cat lambdabot.log >> lambdabot.log.old
-LC_ALL=en_US.UTF-8 PATH=$HOME/.cabal/bin:$HOME/bin:$PATH \
-  exec lambdabot \
+LC_ALL=en_US.UTF-8 \
+  cabal exec lambdabot -- \
   --trust=array \
   --trust=semigroups \
   --trust=base \
@@ -46,5 +46,5 @@ LC_ALL=en_US.UTF-8 PATH=$HOME/.cabal/bin:$HOME/bin:$PATH \
   -X UnicodeSyntax \
   -X ViewPatterns \
   -X NoMonomorphismRestriction \
-  -e 'rc online.rc' \
+  -e 'rc scripts/online/saki.rc' \
   > lambdabot.log 2>&1

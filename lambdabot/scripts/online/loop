@@ -11,7 +11,7 @@ def check_quit():
 
 while True:
    start = time.time()
-   subprocess.call(['./run.sh'])
+   subprocess.call(['scripts/online/run.sh'])
    stop = time.time()
    print "%s --> %fs" % (time.ctime(), stop - start)
    if check_quit() and stop - start < 300:
