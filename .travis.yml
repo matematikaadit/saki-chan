@@ -3,7 +3,16 @@ ghc:
   - 7.8
   - 7.6
 install: cabal install happy --constraint="mtl==2.1.3.1"
-script: .travis/build
+script:
+  - cd lambdabot-core && cabal install
+  - cd lambdabot-trusted && cabal install
+  - cd lambdabot-reference-plugins && cabal install
+  - cd lambdabot-haskell-plugins && cabal install
+  - cd lambdabot-irc-plugins && cabal install
+  - cd lambdabot-misc-plugins && cabal install
+  - cd lambdabot-novelty-plugins && cabal install
+  - cd lambdabot-social-plugins && cabal install
+  - cd lambdabot && cabal install
 branches:
   only:
     - master
