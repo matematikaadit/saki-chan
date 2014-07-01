@@ -4,15 +4,15 @@ ghc:
   - 7.6
 install: cabal install happy --constraint="mtl==2.1.3.1"
 script:
-  - cd lambdabot-core && cabal install
-  - cd lambdabot-trusted && cabal install
-  - cd lambdabot-reference-plugins && cabal install
-  - cd lambdabot-haskell-plugins && cabal install
-  - cd lambdabot-irc-plugins && cabal install
-  - cd lambdabot-misc-plugins && cabal install
-  - cd lambdabot-novelty-plugins && cabal install
-  - cd lambdabot-social-plugins && cabal install
-  - cd lambdabot && cabal install
+  - cd lambdabot-core && cabal install && cd ..
+  - cd lambdabot-trusted && cabal install && cd ..
+  - cd lambdabot-reference-plugins && cabal install && cd ..
+  - cd lambdabot-haskell-plugins && cabal install && cd ..
+  - cd lambdabot-irc-plugins && cabal install && cd ..
+  - cd lambdabot-misc-plugins && cabal install && cd ..
+  - cd lambdabot-novelty-plugins && cabal install && cd ..
+  - cd lambdabot-social-plugins && cabal install && cd ..
+  - cd lambdabot && cabal install && cd ..
 branches:
   only:
     - master
