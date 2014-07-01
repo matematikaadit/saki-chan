@@ -31,3 +31,10 @@ cabal.config
 ###########
 
 \#*#
+
+#############
+# Lambdabot #
+#############
+
+lambdabot.log
+lambdabot.log.old
