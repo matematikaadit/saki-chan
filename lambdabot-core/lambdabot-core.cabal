@@ -83,7 +83,7 @@ library
                         lifted-base             >= 0.2,
                         monad-control           >= 0.3,
                         mtl                     >= 2,
-                        network                 >= 2.3.0.13,
+                        network                 >= 2.3.0.13 && < 2.5.0.0,
                         time                    >= 1.4,
                         parsec                  >= 3,
                         random                  >= 1,
