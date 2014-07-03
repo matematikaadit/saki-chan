@@ -1,5 +1,7 @@
 irc-connect freenode chat.freenode.net 6667 saki-chan Saki-chan sahabat #haskell-id
 admin + freenode:matematikaadit
+join freenode:#docker-id
+join freenode:#golang-id
 join freenode:#haskell-id
-join freenode:#ubuntu-indonesia
+join freenode:#python-id
 run 0
