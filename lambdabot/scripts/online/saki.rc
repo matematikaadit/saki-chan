@@ -1,6 +1,7 @@
 rc scripts/online/password.rc
 irc-connect freenode chat.freenode.net 6667 saki-chan Saki-chan
 admin + freenode:matematikaadit
+admin + freenode:kusut
 join freenode:#docker-id
 join freenode:#golang-id
 join freenode:#haskell-id
