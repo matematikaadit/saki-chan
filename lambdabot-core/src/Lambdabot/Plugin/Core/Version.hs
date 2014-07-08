@@ -13,8 +13,8 @@ versionPlugin = newModule
     { moduleCmds = return
         [ (command "version")
             { help = say $
-                "version/source. Ngelaporin versi " ++
-                "dan git repo dari bot ini"
+                "version. Ngeprint versi " ++
+                "serta repositori saki-chan"
             , process = const $ do
                 say $ "saki-chan " ++ showVersion version
                 say "git clone https://github.com/matematikaadit/saki-chan.git"
