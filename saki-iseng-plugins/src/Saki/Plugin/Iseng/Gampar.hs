@@ -19,14 +19,14 @@ gamparPlugin = newModule
 ------------------------------------------------------------------------
 
 gampar :: String -> Cmd Gampar ()
-gampar "gue dong" = do
-    target <- showNick =<< getSender
-    gamparAcak target
-gampar "diri sendiri" = do
-    target <- showNick =<< getLambdabotName
-    gamparAcak target
-gampar target =
-    gamparAcak target
+gampar target = do
+    targetAsli <- nickAsli (stripSpasiLebih target)
+    gamparAcak targetAsli
+    where
+        stripSpasiLebih         = unwords . words
+        nickAsli "gue dong"     = showNick =<< getSender
+        nickAsli "diri sendiri" = showNick =<< getLambdabotName
+        nickAsli str            = return str
 
 gamparAcak :: String -> Cmd Gampar ()
 gamparAcak tgt = say . ($ tgt) =<< random daftarGamparan
