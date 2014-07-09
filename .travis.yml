@@ -4,17 +4,16 @@ ghc:
   - 7.6
 install: cabal install happy --constraint="mtl==2.1.3.1"
 script:
-  - cd lambdabot-core && cabal install && cd ..
-  - cd lambdabot-trusted && cabal install && cd ..
-  - cd lambdabot-reference-plugins && cabal install && cd ..
-  - cd lambdabot-haskell-plugins && cabal install && cd ..
-  - cd lambdabot-irc-plugins && cabal install && cd ..
-  - cd lambdabot-misc-plugins && cabal install && cd ..
-  - cd lambdabot-novelty-plugins && cabal install && cd ..
-  - cd lambdabot-social-plugins && cabal install && cd ..
-  - cd lambdabot && cabal install && cd ..
+  - cabal install lambdabot-core/
+  - cabal install lambdabot-trusted/
+  - cabal install lambdabot-reference-plugins/
+  - cabal install lambdabot-haskell-plugins/
+  - cabal install lambdabot-irc-plugins/
+  - cabal install lambdabot-misc-plugins/
+  - cabal install lambdabot-novelty-plugins/
+  - cabal install lambdabot-social-plugins/
+  - cabal install saki-iseng-plugins/
+  - cabal install lambdabot/
 branches:
   only:
     - master
-notifications:
-  irc: "chat.freenode.net#haskell-id"
