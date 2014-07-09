@@ -12,6 +12,7 @@ import Lambdabot.Plugin.Misc
 import Lambdabot.Plugin.Novelty
 import Lambdabot.Plugin.Reference
 import Lambdabot.Plugin.Social
+import Saki.Plugin.Iseng
 
 modulesInfo :: Modules
 modulesInfo = $(modules $ corePlugins
@@ -20,4 +21,5 @@ modulesInfo = $(modules $ corePlugins
     ++ ["dummy", "fresh", "todo"] -- miscPlugins
     ++ ["bf", "dice", "elite", "filter", "quote", "slap", "unlambda"] -- noveltyPlugins
     ++ ["dict", "oeis", "search", "spell", "ticker", "where"] -- referencePlugins
-    ++ ["activity", "karma", "poll", "tell"]) -- socialPlugins
+    ++ ["activity", "karma", "poll", "tell"] -- socialPlugins
+    ++ isengPlugins)
