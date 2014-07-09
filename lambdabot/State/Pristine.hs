@@ -6,6 +6,7 @@
 module L where
 import Control.Applicative
 import Control.Monad
+import Data.Array
 import Data.Bool
 import Data.Char
 import Data.Composition
