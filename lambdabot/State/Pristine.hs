@@ -11,6 +11,7 @@ import Data.Bool
 import Data.Char
 import Data.Composition
 import Data.List
+import Data.Monoid
 import Data.Word
 
 {-# LINE 1 "<local>" #-}
