@@ -38,3 +38,4 @@ cabal.config
 
 lambdabot.log
 lambdabot.log.old
+password.rc
